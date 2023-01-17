@@ -39,34 +39,10 @@ export default function Navbar() {
                 aria-current="page"
                 href="#"
                 onClick={() => {
-                  navigate("/client");
+                  navigate("/");
                 }}
               >
-                Client
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="#"
-                onClick={() => {
-                  navigate("/room");
-                }}
-              >
-                Room
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="#"
-                onClick={() => {
-                  navigate("/RoomUsage");
-                }}
-              >
-                Room Usage
+                Home
               </a>
             </li>
             <li class="nav-item">
