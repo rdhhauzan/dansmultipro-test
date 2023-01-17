@@ -12,9 +12,10 @@ app.use(express.json());
 app.post("/register", Controller.userRegister);
 app.post("/login", Controller.userLogin);
 
-app.use(authentication)
+app.use(authentication);
 
-
+app.get("/jobs", Controller.getJobs);
+app.get("/job/:id", Controller.getJob);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

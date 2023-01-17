@@ -67,6 +67,39 @@ class Controller {
       }
     }
   }
+
+  static async getJobs(req, res) {
+    try {
+      let {
+        description = "",
+        location = "",
+        full_time = false,
+        page = "",
+      } = req.query;
+      let { data } = await axios.get(
+        `http://dev3.dansmultipro.co.id/api/recruitment/positions.json?page=${page}&description=${description}&location=${location}&full_time=${full_time}`
+      );
+
+      res.status(200).json(data);
+      console.log(data.length);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  static async getJob(req, res) {
+    try {
+        let { id } = req.params
+
+        let { data } = await axios.get(
+          `http://dev3.dansmultipro.co.id/api/recruitment/positions/${id}`
+        );
+        
+        res.status(200).json(data)
+    } catch (error) {
+        console.log(error);
+    }
+  }
 }
 
 module.exports = Controller;
